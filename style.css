@@ -1,0 +1,215 @@
+/* M.Mustafa - 221383 */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f4f6f8;
+    font-family: sans-serif;
+    height: 100vh;
+}
+
+.dashboard{
+    display: flex;
+}
+
+/***************** Navbar *****************/
+#navbar {
+    background-color: #2f4050;
+    padding: 10px;
+    width: 20%;
+    height: 100vh;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+}
+
+#bar-icon {
+    padding: 0.3rem 0.7rem;
+    margin-bottom: 0.313rem;
+    font-size: 1.5rem;
+    display: none;
+}
+
+#navbar .navbar-content {
+    display: block;
+}
+
+#navbar .navbar-content ul li {
+    margin: 1.125rem 0.625rem;
+    list-style-type: none;
+}
+
+.dropdown-btn {
+    background-color: #2f4050;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content-1, .dropdown-content-2 {
+    display: none;
+    min-width: 6.25rem;
+    margin-top: 0.5rem;
+}
+
+.dropdown-content-1 a, .dropdown-content-2 a {
+    color: white;
+    padding: 0.625rem;
+    text-decoration: none;
+    display: block;
+}
+
+/**************** Dashboard Overview *********************/
+#overview {
+    width: 100%;
+    height: 100vh;
+    padding: 1.25rem;
+    margin: 0 0 0 21.5%;
+}
+
+#overview .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#toggle-theme {
+    background-color: #f0f0f0;
+    border: none;
+    height: 1.875rem;
+    padding: 0 0.938rem;
+    border-radius: 0.313rem;
+    cursor: pointer;
+}
+
+#overview .statistics {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.625rem;
+}
+
+#overview .statistics .stats{
+    flex: 1;
+    background-color: white;
+    border-radius: 0.313rem;
+    padding: 1.25rem;
+    box-shadow: 0 0.188rem 1.125rem #e5e7e8;
+}
+
+#overview .chart {
+    display: flex;
+    align-items: center;
+    height: 16rem;
+    padding: 1.25rem;
+    background-color: white;
+    border-radius: 0.313rem;
+    box-shadow: 0 0.188rem 1.125rem #e5e7e8;
+}
+
+#overview .item-table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.25rem;
+    background-color: white;
+    border-radius: 0.313rem;
+    box-shadow: 0 0.188rem 1.125rem #e5e7e8;
+    flex-direction: column;
+}
+
+#overview .item-table input {
+    width: 100%;
+    padding: 0.625rem 0.625rem;
+    border: 0.094rem solid #f0f0f0;
+    border-radius: 0.313rem;
+    box-sizing: border-box;
+    margin: 0 0 1rem 0;
+}
+
+#overview .item-table table {
+    width: 100%;
+    border: 0.063rem solid #eaeaea;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: #f0f0f0;
+}
+
+th, td {
+    border: 0.063rem solid #f0f0f0;
+    padding: 0.625rem;
+}
+
+#overview .copyrights {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.25rem;
+    background-color: #2f4050;
+    color: white;
+}
+
+#overview .statistics, #overview .chart, #overview .item-table, #overview .copyrights {
+    margin-top: 0.938rem;
+}
+
+/************** Media Queries ************/
+@media (max-width: 800px) {
+    .dashboard {
+        display: unset;
+    }
+
+    #navbar {
+        width: 100%;
+        height: auto;
+        display: block;
+        position: unset;
+    }
+
+    #navbar .navbar-content {
+        display: none;
+    }
+
+    #bar-icon {
+        display: inline;
+        margin: 0.625rem auto;
+    }
+
+    .dropdown-content-1, .dropdown-content-2 {
+        margin: 0;
+    }
+
+    #navbar .navbar-content ul li, .dropdown-content-1 a, .dropdown-content-2 a {
+        margin: 0 0.625rem;
+        padding: unset;
+    }
+
+    #overview {
+        margin-left: 0;
+        padding: 1.25rem 0.625rem;
+    }
+
+    #overview .statistics {
+        display: flex;
+        flex-direction: column;
+        padding: 1.25rem;
+    }
+
+    #overview .statistics .stats{
+        flex: 1;
+        width: 100%;
+    }
+
+    #overview .statistics, #overview .chart, #overview .item-table, #overview .copyrights {
+        margin-top: 0.938rem;
+    }
+}

@@ -1,0 +1,159 @@
+<!-- M.Mustafa - 221383 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Dashboard Navbar -->
+        <nav id="navbar">
+            <button id="bar-icon" onclick="display_navbar_content()"><i class="fa-solid fa-bars"></i></button>
+            <div class="navbar-content">
+                <h2>Dashboard</h2>
+                <ul>
+                    <li>Overview</li>
+                    <li>
+                        <div class="dropdown">
+                            <button class="dropdown-btn" onclick="show_reports()">Reports ▾</button>
+                            <div class="dropdown-content-1">
+                                <a href="#">Daily</a>
+                                <a href="#">Weekly</a>
+                                <a href="#">Monthly</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="dropdown">
+                            <button class="dropdown-btn" onclick="show_analytics()">Analytics ▾</button>
+                            <div class="dropdown-content-2">
+                                <a href="#">Traffic</a>
+                                <a href="#">Conversions</a>
+                                <a href="#">Performance</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>Export</li>
+                </ul>
+            </div>
+            
+        </nav>
+
+        <!-- Dashboard Overview -->
+        <section id="overview">
+            <!-- Header -->
+            <div class="header">
+                <h1>Dashboard Overview</h1>
+                <button id="toggle-theme">Toggle Theme</button>
+            </div>
+            <!-- Statistics -->
+            <div class="statistics">
+                <div class="sales stats">
+                    <h2>Sales</h2>
+                    <p>Total Sales: $12,345</p>
+                </div>
+                <div class="visitors stats">
+                    <h2>Visitors</h2>
+                    <p>Total Visitors: 1,234</p>
+                </div>
+                <div class="orders stats">
+                    <h2>Orders</h2>
+                    <p>New Orders: 123</p>
+                </div>
+                <div class="revenue stats">
+                    <h2>Revenue</h2>
+                    <p>Total Revenue: $45,676</p>
+                </div>
+            </div>
+            <!-- Chart -->
+            <div class="chart">
+                <canvas id="myChart"></canvas>
+            </div>
+            <!-- Item Table -->
+            <div class="item-table">
+                <input type="text" name="Search" id="search" placeholder="Search Table ..." onkeyup="search_item()">
+                <table id="items-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Value</th>
+                        </tr>   
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Item Alpha</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>Item Beta</td>
+                            <td>200</td>
+                        </tr>
+                        <tr>
+                            <td>Item Gamma</td>
+                            <td>300</td>
+                        </tr>
+                        <tr>
+                            <td>Item Delta</td>
+                            <td>400</td>
+                        </tr>
+                        <tr>
+                            <td>Item Epsilon</td>
+                            <td>500</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Copyrights -->
+             <div class="copyrights">
+                <p>© 2025 Responsive Dashboard. All rights reserved.</p>
+             </div>
+        </section>
+    </div>
+
+    <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        const ctx = document.getElementById('myChart');
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+                label: '# of Votes',
+                data: [12, 19, 3, 5, 2, 3],
+                borderWidth: 1,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+            }]
+            },
+            options: {
+            scales: {
+                y: {
+                beginAtZero: true
+                }
+            }
+            }
+        });
+    </script>
+</body>
+</html>
